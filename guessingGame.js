@@ -18,10 +18,10 @@ button.addEventListener('click', () => {
     }
 
     if(input < randomNumb){
-        output.innerHTML = 'The number you are looking for is greater ' + `${input}`;
+        output.innerHTML = `The number you are looking for is greater then ${input}`;
     }
     if(input > randomNumb){
-        output.innerHTML = 'The number you are looking for is less then ' + `${input}`;
+        output.innerHTML = `The number you are looking for is less then ${input}`;
     }
 
     /* if(randomNumb - input < 10 && randomNumb - input > -10){
