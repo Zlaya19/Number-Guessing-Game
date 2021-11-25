@@ -1,7 +1,15 @@
+@font-face {
+    font-family: 'BPdotsUnicase';
+    src: url('./font/BPdotsUnicase-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'BPdotsUnicase';
 }
 
 body {
@@ -10,19 +18,22 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #9ab5be;
+    background: #333;
 }
 
 #container {
-    width: 650px;
-    height: 330px;
-    border: 4px solid #eee;
-    box-shadow: 0 0 30px #555, inset 0 0 4px #777;
+    position: relative;
+    width: 600px;
+    min-height: 370px;
+    border: 3px solid;
+    box-shadow: 0 0 25px #111;
+    background: #333;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    background: #E1CD21;
+    border-image: linear-gradient(45deg,#333, dodgerblue, #333, dodgerblue) 1;
 }
 
 #inputDiv {
@@ -34,58 +45,122 @@ body {
 }
 
 input[type="text"] {
-    padding: 6px 20px;
-    border: 3px solid #eee;
+    padding: 6px 0px;
+    width: 260px;
+    font-size: 23px;
+    font-weight: bold;
+    border: none;
+    color: dodgerblue;
+    background: #333;
+    box-shadow: 0 0 15px #111;
+    margin-bottom: 5px;
     outline: none;
-    box-shadow: 0 0 5px #666, inset 0 0 2px #777;
+    text-align: center;
 }
 
 #btn {
-    padding: 6px 20px;
-    border: 3px solid #eee;
-    box-shadow: 0 0 5px #666, inset 0 0 2px #777;
-    background: #88a4ad;
-    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    color: dodgerblue;
+    padding: 8px 12px;
+    background: #333;
+    box-shadow: 0 0 15px #111;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+#btn:hover {
+    background: rgb(56, 56, 56);
 }
 
 .classDiv {
+    text-align: center;
     font-size: 48px;
-    font-family: calibri;
     text-transform: uppercase;
     color: #333;
     text-shadow: 0 0 3px #666, 0 0 3px #666;
 }
 
 .classResult {
-    font-size: 48px;
-    font-family: calibri;
-    color: #fff;
+    padding: 20px 30px;
+    font-size: 36px;
+    color: dodgerblue;
     font-weight: bold;
     text-align: center;
-    text-shadow: 0 0 3px #666, 0 0 3px #666;
+    /* text-shadow: 0 0 3px #666, 0 0 3px #666; */
 }
 
 #output {
-    width: 99%;
+    width: 98%;
     height: 200px;
-    border: 2px solid #777;
-    background: #21E1CD;
-    box-shadow: 0 0 5px #666, 0 0 5px #666;
-    margin-bottom: 3px;
+    background: rgb(56, 56, 56);
+    box-shadow: 0 0 15px #111;
+    padding: 15px 20px;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 30px;
+    flex-direction: column;
+    border-radius: 8% 8% 0 0;
+}
+
+#numberOfTries {
+    position: absolute;
+    font-size: 64px;
+    color: dodgerblue;
+    top: 60px;
+    right: 25px;
+}
+
+@media screen and (max-width: 650px){
+    #container {
+        width: 95%;
+    }
 }
 
 @media screen and (max-width: 550px){
-    .classResult, .classDiv {
+    .classResult {
+        font-size: 34px;
+    }
+
+}
+
+
+@media screen and (max-width: 450px){
+    .classDiv {
         font-size: 36px;
     }
+
+    #inputDiv {
+        flex-direction: column;
+    }
+
+    .classResult {
+        font-size: 30px;
+    }
 }
+
 
 @media screen and (max-width: 350px){
     #inputDiv {
         flex-direction: column;
+    }
+/* 
+    input[type="text"] {
+        font-size: 20px;
+    }
+    
+    #btn {
+        font-size: 17px;
+        padding: 10px 14px;
+    } */
+    .classDiv {
+        font-size: 32px;
+    }
+
+    .classResult {
+        font-size: 28px;
     }
 }
